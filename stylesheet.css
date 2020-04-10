@@ -1,0 +1,217 @@
+
+a:hover{color: white;}
+a{color: black;}
+
+html {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+html body {
+  margin: 0;
+  background: #2980b9;
+  background:  #119998;
+  font-family:  'Open Sans', sans-serif;
+
+}
+.heading {
+  color: #fff;
+  text-align: center;
+}
+
+
+.container {
+  background-color: #fff;
+  padding: 1rem;
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
+}
+
+
+
+
+
+
+
+
+#film1text{
+    font-size: 1rem;
+    text-decoration: none;
+
+    
+}
+
+#film2text{
+    font-size: 1rem;
+      
+    
+}
+
+#film3text{
+    font-size: 1rem;
+    
+}
+
+#film4text{
+    font-size: 1rem;
+    
+}
+
+#film5text{
+    font-size: 1rem;
+    
+}
+
+
+
+.container .list .num {
+  padding: 0.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: 0.25s;
+}
+.container .list .num:nth-child(0):before {
+  content: '0';
+  font-size: 4rem;
+  font-weight: bold;
+  color: #000;
+  width: 2rem;
+  opacity: 0.05;
+  transition: 0.25s;
+}
+.container .list .num:nth-child(1):before {
+  content: '1';
+  font-size: 4rem;
+  font-weight: bold;
+  color: #000;
+  width: 2rem;
+  opacity: 0.05;
+  transition: 0.25s;
+}
+
+
+
+
+.container .list .num:nth-child(2):before {
+  content: '2';
+  font-size: 4rem;
+  font-weight: bold;
+  color: #000;
+  width: 2rem;
+  opacity: 0.05;
+  transition: 0.25s;
+}
+.container .list .num:nth-child(3):before {
+  content: '3';
+  font-size: 4rem;
+  font-weight: bold;
+  color: #000;
+  width: 2rem;
+  opacity: 0.05;
+  transition: 0.25s;
+}
+.container .list .num:nth-child(4):before {
+  content: '4';
+  font-size: 4rem;
+  font-weight: bold;
+  color: #000;
+  width: 2rem;
+  opacity: 0.05;
+  transition: 0.25s;
+}
+.container .list .num:nth-child(5):before {
+  content: '5';
+  font-size: 4rem;
+  font-weight: bold;
+  color: #000;
+  width: 2rem;
+  opacity: 0.05;
+  transition: 0.25s;
+}
+.container .list .num:nth-child(6):before {
+  content: '6';
+  font-size: 4rem;
+  font-weight: bold;
+  color: #000;
+  width: 2rem;
+  opacity: 0.05;
+  transition: 0.25s;
+}
+.container .list .num:nth-child(7):before {
+  content: '7';
+  font-size: 4rem;
+  font-weight: bold;
+  color: #000;
+  width: 2rem;
+  opacity: 0.05;
+  transition: 0.25s;
+}
+.container .list .num:nth-child(8):before {
+  content: '8';
+  font-size: 4rem;
+  font-weight: bold;
+  color: #000;
+  width: 2rem;
+  opacity: 0.05;
+  transition: 0.25s;
+}
+.container .list .num:nth-child(9):before {
+  content: '9';
+  font-size: 4rem;
+  font-weight: bold;
+  color: #000;
+  width: 2rem;
+  opacity: 0.05;
+  transition: 0.25s;
+}
+.container .list .num h3 {
+  position: relative;
+  left: -1.5rem;
+  color: #3d3d3d;
+  font-size: 0.85rem;
+  transition: 0.25s;
+}
+.container .list .num:hover {
+  background-color: #fafafa;
+  cursor: pointer;
+}
+.container .list .num:hover:before {
+  opacity: 0.2;
+}
+.container .list .num:hover h3 {
+  left: 1rem;
+}
+.message {
+  color:black;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 2rem;
+}
+
+
+#logo{
+ width: 13rem;
+    margin-top: 1.75rem;
+    margin-bottom: .75rem;
+    
+}
+
+
+#software{
+    
+    text-align: center;
+     font-family:  'Comfortaa', cursive;
+
+}
+
+.details{
+    margin-bottom: 0rem;
+    margin-top:0rem;
+    font-size: 10px;
+    padding: 0rem;
+    margin-left: 1.5rem;
+}
+
+
+

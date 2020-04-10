@@ -1,0 +1,512 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head> 
+  <link href="https://fonts.googleapis.com/cssfamily=Comfortaa|Karma|Poly&display=swap|Open+Sans&display=swap" rel="stylesheet">   
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+  <style>
+    a:visited{color:black;}
+    a:link{color: black; text-decoration: none;}
+    a:hover{color: #119998;}
+    #processedworkprintpage{width: 600px;height: 600px;float: center;}
+    #rawworkprintpage{width: 600px;height: 600px;float: center;}
+    #deliverablesouter {height: 84px;padding-top: 20px;}
+    .deliverablestable {display: table; margin: 0 auto;}
+    ul#deliverableslist {min-width: 696px;list-style: none;padding-top: 20px;}
+    ul#deliverableslist li {display: inline;padding: 40px;font-family: 'Open Sans', sans-serif;}  
+    #filmname{text-align: center;margin-bottom: 0px;margin-top: 40px;}
+    #filmdescription{text-align: center;margin-top: 5px;}
+    #reportdiv{border: 2px solid black;margin: 25px; margin-top: 50px;padding:30px;}
+    #csvbutton{background-color: none;color: #119998;font-size: 15px;font-family:  'Open Sans', sans-serif;padding: 15px;border:2px solid #119998;cursor: pointer;}
+    #csvframe{width: 1160px;height: 600px;border: 2px solid black;}
+    #csvdiv{text-align: center;}
+    #csvbutton:hover { background:#119998; color: white; }
+    a{text-decoration: none;}
+    body{margin-bottom: 10px; margin-top: 10px;margin-right: 50px; margin-left: 50px;}
+    p{font-family: 'Open Sans', sans-serif;;color="121312";} 
+    h1{font-family: 'Open Sans', sans-serif;color="121312";}  
+    h2{color="121312";}
+    #title{font-family: 'Open Sans', sans-serif;text-align:center;font-size: 25px;margin-top: 0px; margin-bottom: 0px;}
+    #logo{width: 150px;height: auto;}
+    #header{text-align: center;} 
+    #generation{text-align: right;}
+    #reelid{text-align: left;font-family:'Open Sans', sans-serif; margin-left: 0px;} 
+    #reeliddiv{float: left;}
+    #profile{margin-bottom: -10px;font-family: 'Open Sans', sans-serif;}
+    #profiletable{border: none;}
+    #observations{font-size: 15px;font-style: italic;}
+    #waypoint{font-size: 20px;font-style: italic;text-align: center; margin-top: 20px;}
+    #waypointsmpte{font-size: 20px;font-style: italic;text-align: center; margin-top: 20px;}
+    #shrinktitle{margin-bottom: -10px; font-family: 'Open Sans', sans-serif;}
+    #shrinktext{font-size: 15px;font-style: italic;}
+    #rightperftitle{margin-bottom: -10px;font-family: 'Open Sans', sans-serif;}
+    #rightperftext{font-size: 15px;font-style: Open Sans, serif; font-style: italic;}
+    #leftperftitle{margin-bottom: -10px;font-family: 'Open Sans', sans-serif;}
+    #leftperftext{font-size: 15px;font-style: italic;}
+    #workprintstitle{;font-family: 'Open Sans', sans-serif; text-align: center; margin-bottom: 20px;margin-top: 40px;}
+    .workprintdiv{float: right;margin-right:100px;}
+    .workprintdiv2{float: right;margin-right:100px;margin-bottom: 15px;clear: both;}
+    #rawworkprint{width: 325px; height: 325px;}
+    #processedworkprint{width: 325px;height: 325px;}
+    #filename{text-align: center;margin-top: -12px;}
+    .tooltip {position: relative;display: inline-block;border-bottom: 1px dotted black;cursor: pointer;}
+    .tooltip:hover .tooltiptext {visibility: visible;}
+    .nav_bar{background-color: #119998; margin-left: -100px;margin-right: -100px; margin-top: -10px; height: 50px;margin-bottom: 15px;}
+    #returnhome{margin-left: 75px;font-size: 18px;font-family: 'Open Sans', sans-serif;padding-top: 100px;}
+    #returnhome:hover{color:white;}
+    .tooltip .tooltiptext {visibility: hidden;width: 350px;background-color: black;color: #fff;text-align: center;padding: 5px 5px 5px 5px;border-radius: 6px;position: absolute;z-index: 1;top: -5px;left: 105%;}
+    .tooltip .tooltiptext::after {content: " ";position: absolute;top: 50%;right: 100%; margin-top: -5px;border-width: 5px;border-style: solid;border-color: transparent black transparent transparent;}
+      
+    @media print {
+    body {margin: 0;color: black;background-color:white;}
+    #title{font-size: 20px;margin-top: 0px; margin-bottom: 0px;}
+    h2{font-size: 20px;}
+    p{font-size: 12px;}
+    #processedworkprint{width: 150px;height: 150px;}
+    #rawworkprint{width: 150px;height: 150px;}
+    .workprintdiv{margin-right: 10px;}
+    .workprintdiv2{margin-right: 10px;}
+    #workprintstitle{font-size: 12px;}
+    #shrinktext{font-size:12px;}
+    #leftperftext{font-size:12px;}
+    #rightperftext{font-size:12px;}
+              }
+  </style>
+  </head>
+ <body lang="en-US">
+    <div class="nav_bar">
+        <a href="index.html" id="returnhome"> &larr; Return to Home
+        </a>
+    </div>
+      <h1 id="filmname"> Light and What it Does
+      </h1>
+        <p id="filmdescription">16mm, single perf, transluscent, good condition
+        </p>
+    <div id="deliverablesouter">
+     <div class="deliverablestable">
+        <ul id="deliverableslist">
+            <li><a href="#filmconditionreportanchor">Film Condition Report</a></li>
+            <li><a href="#csvfileanchor">CSV File</a></li>
+            <li><a href="#rawworkprintanchor">Raw Workprint</a></li>
+            <li><a href="#processedworkprintanchor">Processed Workprint</a></li>
+        </ul>
+      </div>
+    </div>
+      <div id="reportdiv">
+        <div id="header">
+           <img src=https://static1.squarespace.com/static/593193ffbe6594d464991a75/t/5db5d9e08cf08675afbcd452/1583278552825/?format=1500w id="logo">
+                <a name="filmconditionreportanchor"></a>
+            <h1 id="title">FILM CONDITION REPORT</h1>
+        </div>
+    <br>   
+        <div id="reeliddiv">
+            <h2 id="reelid">Reel ID: <b>LIGHT-AND-WHAT-IT-DOES</b></h2>
+            <p><strong>Nickname: Light and What it Does</strong></p>
+            <p><strong>Feet of Film Inspected: 24'</strong></p>
+        </div>
+    <br>
+        <div id="generation">
+            <p>Inspection Date: 3/25/2020</p>
+            <p>Report Generated: 4/2/2020</p>
+            <p>Generated by User ID: Kara Peneguy</p>
+        </div>
+    <h2 id="profile">Profile</h2>
+        <p id="observations">The following values are Scout operator observations</p>
+            <table id="profiletable"cellpadding="7" cellspacing="0">
+                <tbody>
+                    <tr valign="top">
+                        <td width="100" style="background: #9ee0f7"><b>GAUGE</b></td>
+                        <td width="100" style="background: #9de1cf"><b>FORMAT</b></td>
+                        <td width="100" style="background: #ffcca6"><b>SOUND</b></td>
+                        <td width="100" style="background: #9ee0f7"><b>PROCESS</b></td>
+                        <td width="100" style="background: #9de1cf"><b>ODOR</b></td>
+                    </tr>
+                    <tr valign="top">
+                        <td width="100" style="background: #def4fc">16mm</td>
+                        <td width="100" style="background: #def5ee">1-perf</td>
+                        <td width="100" style="background: #ffe5d2">optical</td>
+                        <td width="100" style="background: #def4fc">b/w</td>
+                        <td width="100" style="background: #def5ee">none</td>
+                    </tr>
+                </tbody>
+            </table>
+        <br>
+    <p id="observations">Notes taken after inspection:</p>
+        <textarea id="textarea" rows="8" cols="110"></textarea>
+    <br>
+    <br>
+    <br>
+        <p id="waypoint">The following values are the result of Waypoint analysis</p>
+    <br>
+        <div class="workprintdiv">
+            <h2 id="workprintstitle">Raw Workprint</h2>
+                <p id= "filename">File: raw_workprint_light.mp4</p>
+            <iframe src="./raw_workprint_light.mp4#t=500.0" id="rawworkprint" ></iframe>
+        </div>
+    <div class="workprintdiv2">
+        <h2 id="workprintstitle">Processed Workprint</h2>
+            <p id="filename">File: LIGHT-AND-WHAT-IT-DOES_processed_workprint</p>
+            <iframe src="./LIGHT-AND-WHAT-IT-DOES_processed_workprint.mp4#t=500.0" id="processedworkprint" >
+            </iframe>
+    </div>
+          <div>
+              <h2 id="shrinktitle">Shrink &amp; Stretch</h2>        
+                <p id="shrinktext">These values represent overall shrink and stretch of the film as a whole
+                </p>
+          </div>
+    <div>
+      <table id="shrink" cellpadding="7" cellspacing="0">
+        <tbody>
+          <tr>
+            <td width="162" height="10" style="background: #d9d9d9">
+                   <div class="tooltip">Lengthwise Shrink 
+                       <span class="tooltiptext">Shrinkage as measured from the top line of the top sprocket to the bottom line of the bottom sprocket.
+                       </span>
+                    </div>
+             </td>
+            <td width="144" height="10" style="background: #dbf6b9"><b>3.690%</b></td>
+          </tr>
+         <tr>
+            <td width="162" height="10" style="background: #f2f2f2" >
+                <div class="tooltip">Lengthwise Stretch 
+                    <span class="tooltiptext">Stretch as measured from the top line of the top sprocket to the bottom line of the bottom sprocket.
+                    </span>
+                </div>
+              </td>
+            <td width="144" style="background: #edfadc"><b>1.122%</b></td>
+          </tr>
+          <tr>
+            <td width="162" height="10" style="background: #d9d9d9">
+                <div class="tooltip">Lateral Shrink
+                    <span class="tooltiptext">Shrinkage as measured from the outer line of the left sprocket to the outer line of the right sprocket.
+                    </span>
+                </div>
+              <font color="#ff0000"><sup><b>1</b></sup></font>
+            </td>
+            <td width="144" style="background: #dbf6b9"><b>5.920%</b></td>
+          </tr>
+          <tr>
+            <td width="162" height="9" style="background: #f2f2f2">
+                <div class="tooltip">Lateral Stretch
+                    <span class="tooltiptext">Stretch as measured from the outer line of the left sprocket to the outer line of the right sprocket.
+                    </span>
+                </div>
+              <font color="#ff0000"><sup><b>1</b></sup></font>
+            </td>
+            <td width="144" style="background: #edfadc"><b>2.051%</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      <div style="margin-top: 40px;">
+			<h2 id="leftperftitle">Left Perforation Integrity &amp; Uniformity</h2>        
+			<p id="leftperftext">These values represent local variations, as a % of frames where the following are present:</p>
+    </div>
+    <div>
+      <table cellpadding="7" cellspacing="0">
+        <tbody>
+          <tr>
+            <td width="175" height="9" style="background: #d9d9d9">Vertical Perf Distortion</td>
+            <td width="147" style="background: #dbf6b9"><b>2.995%</b></td>
+          </tr>
+          <tr>
+            <td width="175" height="10" style="background: #f2f2f2">Horizontal Perf Distortion</td>
+            <td width="147" style="background: #ffe5d2"><b>5.686%</b></td>
+          </tr>
+          <tr>
+            <td width="175" height="10" style="background: #d9d9d9">
+             <div class="tooltip">Lengthwise Shrink 
+                       <span class="tooltiptext">Shrinkage as measured from the top line of the top sprocket to the bottom line of the bottom sprocket.
+                       </span>
+             </div>
+              <font color="#ff0000"><sup><b>2</b></sup></font>
+            </td>
+            <td width="147" style="background: #fcd8d3"><b>5.686%</b></td>
+          </tr>
+          <tr>
+            <td width="159" height="10" style="background: #f2f2f2">
+              <div class="tooltip">Lengthwise Stretch 
+                <span class="tooltiptext">Stretch as measured from the top line of the top sprocket to the bottom line of the bottom sprocket.
+                </span>
+               </div>
+              <font color="#ff0000"><sup><b>2</b></sup></font>
+            </td>
+            <td width="147" style="background: #edfadc"><b>0.000%</b></td>
+          </tr>
+          <tr>
+            <td width="159" height="10" style="background: #d9d9d9">
+              <div class="tooltip">Lateral Shrink
+                <span class="tooltiptext">Shrinkage as measured from the outer line of the left sprocket to the outer line of the right sprocket.
+                </span>
+                </div>
+              <font color="#ff0000"><sup><b>1, 2</b></font>
+            </td> 
+            <td width="147" style="background: #dbf6b9"><b>2.354%</b></td>
+          </tr>
+          <tr>
+            <td width="159" height="10" style="background: #f2f2f2">
+              <div class="tooltip">Lateral Stretch
+                <span class="tooltiptext">Stretch as measured from the outer line of the left sprocket to the outer line of the right sprocket.
+                </span>
+            </div>
+              <font color="#ff0000"><sup><b>1, 2</b></sup></font>
+            </td>
+            <td width="147" style="background: #ffe5d2"><b>0.640%</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="margin-top: 40px;">
+        <h2 id="rightperftitle">Right Perforation Integrity &amp; Uniformity</h2>        
+			<p id="rightperftext">These values represent local variations, as a % of frames where the following are present:
+            </p>
+    </div>
+    <div>
+      <table cellpadding="7" cellspacing="0">
+        <tbody>
+          <tr>
+            <td width="175" height="9" style="background: #d9d9d9">Vertical Perf Distortion</td>
+            <td width="147" style="background: #dbf6b9"><b>NaN</b></td>
+          </tr>
+          <tr>
+            <td width="175" height="10" style="background: #f2f2f2">Horizontal Perf Distortion</td>
+            <td width="147" style="background: #ffe5d2"><b>NaN</b></td>
+          </tr>
+          <tr>
+            <td width="175" height="10" style="background: #d9d9d9">
+              <div class="tooltip">Lengthwise Shrink 
+                       <span class="tooltiptext">Shrinkage as measured from the top line of the top sprocket to the bottom line of the bottom sprocket.
+                       </span>
+                </div>
+              <font color="#ff0000"><sup><b>2</b></sup></font>
+            </td>
+            <td width="147" style="background: #fcd8d3"><b>NaN</b></td>
+          </tr>
+          <tr>
+            <td width="159" height="10" style="background: #f2f2f2">
+              <div class="tooltip">Lengthwise Stretch 
+                <span class="tooltiptext">Stretch as measured from the top line of the top sprocket to the bottom line of the bottom sprocket.
+                </span>
+               </div>
+              <font color="#ff0000"><sup><b>2</b></sup></font>
+            </td>
+            <td width="147" style="background: #edfadc"><b>NaN</b></td>
+          </tr>
+          <tr>
+            <td width="159" height="10" style="background: #d9d9d9">
+               <div class="tooltip">Lateral Shrink
+                <span class="tooltiptext">Shrinkage as measured from the outer line of the left sprocket to the outer line of the right sprocket.
+                </span>
+                </div>
+              <font color="#ff0000"><sup><b>1, 2</b></font>
+            </td>
+            <td width="147" style="background: #dbf6b9"><b>NaN</b></td>
+          </tr>
+          <tr>
+            <td width="159" height="10" style="background: #f2f2f2">
+               <div class="tooltip">Lateral Stretch
+                <span class="tooltiptext">Stretch as measured from the outer line of the left sprocket to the outer line of the right sprocket.
+                </span>
+                </div>
+              <font color="#ff0000"><sup><b>1, 2</b></sup></font>
+            </td>
+            <td width="147" style="background: #ffe5d2"><b>NaN</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+   <div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+        <p id="waypointsmpte">The following values are the result of Waypoint analysis using SMPTE standards
+        </p>
+    <br>
+        <div>
+            <h2 id="shrinktitle">Shrink &amp; Stretch</h2>        
+            <p id="shrinktext">These values represent overall shrink and stretch of the film as a whole
+            </p>
+        </div>
+    <div>
+      <table id="shrink" cellpadding="7" cellspacing="0">
+        <tbody>
+          <tr>
+            <td width="162" height="10" style="background: #d9d9d9">Lengthwise Shrink</td>
+            <td width="144" height="10" style="background: #dbf6b9"><b>available in future</b></td>
+          </tr>
+          <tr>
+            <td width="162" height="10" style="background: #f2f2f2" >Lengthwise Stretch</td>
+            <td width="144" style="background: #edfadc"><b>available in future</b></td>
+          </tr>
+          <tr>
+            <td width="162" height="10" style="background: #d9d9d9">
+              Lateral Shrink
+              <font color="#ff0000"><sup><b>1</b></sup></font>
+            </td>
+            <td width="144" style="background: #dbf6b9"><b>available in future</b></td>
+          </tr>
+          <tr>
+            <td width="162" height="9" style="background: #f2f2f2">
+               Lateral Stretch
+              <font color="#ff0000"><sup><b>1</b></sup></font>
+            </td>
+            <td width="144" style="background: #edfadc"><b>available in future</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+       <div style="margin-top: 40px;">
+			<h2 id="leftperftitle">Left Perforation Integrity &amp; Uniformity</h2>        
+			<p id="leftperftext">These values represent local variations, as a % of frames where the following are present:</p>
+        </div>
+    <div>
+      <table cellpadding="7" cellspacing="0">
+        <tbody>
+          <tr>
+            <td width="175" height="9" style="background: #d9d9d9">Vertical Perf Distortion</td>
+            <td width="147" style="background: #dbf6b9"><b>available in future</b></td>
+          </tr>
+          <tr>
+            <td width="175" height="10" style="background: #f2f2f2">Horizontal Perf Distortion</td>
+            <td width="147" style="background: #ffe5d2"><b>available in future</b></td>
+          </tr>
+          <tr>
+            <td width="175" height="10" style="background: #d9d9d9">
+              Lengthwise Shrink
+              <font color="#ff0000"><sup><b>2</b></sup></font>
+            </td>
+            <td width="147" style="background: #fcd8d3"><b>available in future</b></td>
+          </tr>
+          <tr>
+            <td width="159" height="10" style="background: #f2f2f2">
+              Lengthwise Stretch
+              <font color="#ff0000"><sup><b>2</b></sup></font>
+            </td>
+            <td width="147" style="background: #edfadc"><b>available in future</b></td>
+          </tr>
+          <tr>
+            <td width="159" height="10" style="background: #d9d9d9">
+               Lateral Shrink
+              <font color="#ff0000"><sup><b>1, 2</b></font>
+            </td> 
+            <td width="147" style="background: #dbf6b9"><b>available in future</b></td>
+          </tr>
+          <tr>
+            <td width="159" height="10" style="background: #f2f2f2">
+              Lateral Stretch
+              <font color="#ff0000"><sup><b>1, 2</b></sup></font>
+            </td>
+            <td width="147" style="background: #ffe5d2"><b>available in future</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+		<div style="margin-top: 40px;">
+			<h2 id="rightperftitle">Right Perforation Integrity &amp; Uniformity</h2>        
+			<p id="rightperftext">These values represent local variations, as a % of frames where the following are present:</p>
+       </div>
+    <div>
+      <table cellpadding="7" cellspacing="0">
+        <tbody>
+          <tr>
+            <td width="175" height="9" style="background: #d9d9d9">Vertical Perf Distortion</td>
+            <td width="147" style="background: #dbf6b9"><b>available in future</b></td>
+          </tr>
+          <tr>
+            <td width="175" height="10" style="background: #f2f2f2">Horizontal Perf Distortion</td>
+            <td width="147" style="background: #ffe5d2"><b>available in future</b></td>
+          </tr>
+          <tr>
+            <td width="175" height="10" style="background: #d9d9d9">
+              Lengthwise Shrink
+              <font color="#ff0000"><sup><b>2</b></sup></font>
+            </td>
+            <td width="147" style="background: #fcd8d3"><b>available in future</b></td>
+          </tr>
+          <tr>
+            <td width="159" height="10" style="background: #f2f2f2">
+              Lengthwise Stretch
+              <font color="#ff0000"><sup><b>2</b></sup></font>
+            </td>
+            <td width="147" style="background: #edfadc"><b>available in future</b></td>
+          </tr>
+          <tr>
+            <td width="159" height="10" style="background: #d9d9d9">
+              Lateral Shrink
+              <font color="#ff0000"><sup><b>1, 2</b></font>
+            </td>
+            <td width="147" style="background: #dbf6b9"><b>available in future</b></td>
+          </tr>
+          <tr>
+            <td width="159" height="10" style="background: #f2f2f2">
+              Lateral Stretch
+              <font color="#ff0000"><sup><b>1, 2</b></sup></font>
+            </td>
+            <td width="147" style="background: #ffe5d2"><b>available in future</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <br>      
+        <font color="#f14124"><b>1</b></font>
+        <i>: May represent variation in slitting width at time of manufacture.<br /> </i>
+        <font color="#f14124"><b>2</b></font>
+        <i>: at or above the &ldquo;overall&rdquo; values listed above</i>
+    </div>
+      </div>
+        <br>
+        <hr>
+        <br>
+    <a name="csvfileanchor"></a>
+        <h1 style="text-align: center;">CSV File</h1>   
+          <p style="text-align: center; font-size: 16px; margin-bottom: 30px;">Below is a shortened example of a CSV file generated by Waypoint. To view the entire file, click "DOWNLOAD FULL CSV FILE." <br>Every row in this spreadsheet represents a frame captured by Scout. For full information on what each column item means, visit 
+              <a href="https://www.cinequal.com/terminology">cinequal.com/terminology.</a>
+          </p>
+     <iframe id="csvframe" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTjrSwgCQz3ED_XpDnUW81ykie1Vq0EV_lc-kFpG65-X8OCEkSeTV008xy_OHDMkXdRPMJGo8T9wl05/pubhtml?widget=true&amp;headers=false">
+     </iframe>
+        <br>
+        <br>
+        <br>
+        <br>
+    <div id="csvdiv">
+        <form method="get" action="light-and-what-it-does.csv">
+        <button id="csvbutton" type="submit">DOWNLOAD FULL CSV FILE</button>
+        </form>
+    </div>
+        <br>
+        <hr>
+        <br>
+    <h1 style="text-align: center;">Raw Workprint </h1>
+        <a name="rawworkprintanchor"></a>
+            <p style="text-align: center;">A workprint created by combining all of the images taken by Scout during inspection.</p>
+    <div id="rawworkprintpagediv"> 
+        <br>
+        <iframe src="./raw_workprint_light.mp4" id="rawworkprintpage" style="margin: 0 auto; display: block;">
+        </iframe>
+    </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <hr>
+          <br>
+       <h1 style="text-align: center;">Processed Workprint </h1>
+        <a name="processedworkprintanchor"></a>
+        <p style="text-align: center;">A workprint created by combining all of the images taken by Scout during inspection featuring an overlay of analytical data from Waypoint.</p>
+          <br>
+    <div id="processedworkprintpagediv"> 
+        <iframe src="./LIGHT-AND-WHAT-IT-DOES_processed_workprint.mp4" id="processedworkprintpage" style= "margin:0 auto; display: block;">
+        </iframe>
+    </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <br>
+     <p style="text-align: center;"> For more information regarding what Waypoint analyzes and how condition reports are created, visit <a href="https://www.cinequal.com/terminology">https://www.cinequal.com/terminology.</a
+    </p>           
+    </body>
+</html>
